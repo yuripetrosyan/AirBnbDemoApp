@@ -29,4 +29,11 @@ class ExploreViewModel: ObservableObject{
             print ("Dailed to fetch listings with error: \(error.localizedDescription)")
         }
     }
+    
+    func updateListingsForLocation(_ location: String){
+        let filteredListings = listings.filter({
+            $0.city.lowercased() == location.lowercased() ||
+            $0.state.lowercased() == location.lowercased()
+        })
+    }
 }

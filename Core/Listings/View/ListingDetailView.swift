@@ -12,8 +12,7 @@ import MapKit
 
 struct ListingDetailView: View {
     
-   
- 
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -38,11 +37,11 @@ struct ListingDetailView: View {
                                 Circle()
                                 
                                     .fill(Color.white.opacity(0.8))
-                                       
-                                        
-                                    
+                                
+                                
+                                
                                     .frame(width: 32, height: 32)
-                                   
+                                
                             }
                             .padding()
                         
@@ -52,26 +51,26 @@ struct ListingDetailView: View {
                 } .padding(.top, 60)
                     .padding(.leading)
                 
-//                    Button{
-//                        dismiss()
-//                        
-//                    } label: {
-//                        
-//                        Image(systemName: "chevron.left").padding(.top, 40)
-//                            
-//                            .foregroundStyle(.black)
-//                            .background {
-//                                Circle()
-//                                    .fill(.white.opacity(0.9))
-//                                    .frame(width: 32, height: 32)
-//                                    .padding(.top, 40)
-//                                }
-//                            .padding()
-//                           
-//                    }
-                   
+                //                    Button{
+                //                        dismiss()
+                //
+                //                    } label: {
+                //
+                //                        Image(systemName: "chevron.left").padding(.top, 40)
+                //
+                //                            .foregroundStyle(.black)
+                //                            .background {
+                //                                Circle()
+                //                                    .fill(.white.opacity(0.9))
+                //                                    .frame(width: 32, height: 32)
+                //                                    .padding(.top, 40)
+                //                                }
+                //                            .padding()
+                //
+                //                    }
                 
-
+                
+                
             }
             
             //Hotel infro view
@@ -98,9 +97,6 @@ struct ListingDetailView: View {
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .fontWeight(.semibold)
-                    
-                    
-                    
                 }
                 
                 
@@ -134,9 +130,6 @@ struct ListingDetailView: View {
                     .frame(width: 64, height: 64)
                     .clipShape(Circle())
                 
-                
-                
-                
             }.padding()
             
             
@@ -145,7 +138,7 @@ struct ListingDetailView: View {
             //Listing features view
             VStack (alignment: .leading, spacing: 16){
                 ForEach(0 ..< 2) {feature in
-        
+                    
                     
                     HStack (spacing: 12){
                         Image(systemName: "medal")
@@ -226,51 +219,51 @@ struct ListingDetailView: View {
                 Map()
                     .frame(height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
-                   
-               
+                
+                
                 
             }.padding()
             
         }.toolbar(.hidden, for: .tabBar)
-         .ignoresSafeArea()
-        .padding(.bottom, 110)
+            .ignoresSafeArea()
+            .padding(.bottom, 110)
         
-        .overlay(alignment: .bottom) {
-            //footer
-            
-            VStack{
-                Divider()
-                    .padding(.bottom)
+            .overlay(alignment: .bottom) {
+                //footer
                 
-                HStack{
-                    VStack (alignment: .leading){
-                        Text("$400")
-                            .fontWeight(.semibold)
-                            .font(.subheadline)
-                        Text("Total before taxes")
-                            .font(.footnote)
-                        Text("Oct 15-20")
-                            .fontWeight(.semibold)
-                            .font(.footnote)
-                    }
-                    //    .padding()
-                    Spacer()
+                VStack{
+                    Divider()
+                        .padding(.bottom)
                     
-                    Button {
+                    HStack{
+                        VStack (alignment: .leading){
+                            Text("$400")
+                                .fontWeight(.semibold)
+                                .font(.subheadline)
+                            Text("Total before taxes")
+                                .font(.footnote)
+                            Text("Oct 15-20")
+                                .fontWeight(.semibold)
+                                .font(.footnote)
+                        }
+                        //    .padding()
+                        Spacer()
                         
-                    }label: {
-                        Text("Reserve")
-                            .foregroundStyle(.white)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .frame(width: 140, height: 40)
-                            .background(.pink)
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
-                    }
-                }.padding()
-            }.background(.white)
-            
-        }
+                        Button {
+                            
+                        }label: {
+                            Text("Reserve")
+                                .foregroundStyle(.white)
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .frame(width: 140, height: 40)
+                                .background(.pink)
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                        }
+                    }.padding()
+                }.background(.white)
+                
+            }
     }
 }
 

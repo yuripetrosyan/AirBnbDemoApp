@@ -7,22 +7,24 @@
 
 import SwiftUI
 
-struct TabBarView: View {
+struct MainTabView: View {
     var body: some View {
         
-       
-        HStack(spacing: 70){
-                TabItemView(imageName: "magnifyingglass", text: "Explore")
-                
-                TabItemView(imageName: "heart.fill", text: "Wishlists")
-                
-                TabItemView(imageName: "person.crop.circle.fill", text: "Profils")
-                
-                
-            }.padding()
-            .background(.white)
-           
-                
+    
+        TabView {
+            
+            ExploreView()
+                .tabItem {TabItemView(imageName: "magnifyingglass", text: "Explore") }
+            
+            
+            WishlistView()
+                .tabItem { TabItemView(imageName: "heart.fill", text: "Wishlists") }
+            
+            ProfileVIew()
+                .tabItem { TabItemView(imageName: "person.crop.circle.fill", text: "Profils") }
+        }
+        
+
         
         
         
@@ -30,7 +32,7 @@ struct TabBarView: View {
 }
 
 #Preview {
-    TabBarView()
+    MainTabView()
 }
 
 

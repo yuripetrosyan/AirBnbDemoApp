@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct ProfileOptionRowVIew: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-#Preview {
-    ProfileOptionRowVIew()
+struct ProfileOptionRowVIew: View {
+    
+    var imageName: String
+    var settingText: String
+    
+    
+    var body: some View {
+        HStack{
+            
+            Image(systemName: imageName)
+            Text(settingText)
+            Spacer()
+            Image(systemName: "greaterthan.circle")
+            
+        }.padding(.horizontal)
+            .padding(.top)
+    }
 }

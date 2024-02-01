@@ -16,7 +16,7 @@ struct ListingItemView: View {
             //images
             
             
-            ListingImageCarouselView()
+            ListingImageCarouselView(listing: listing)
                 .frame(height: 320)
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
             

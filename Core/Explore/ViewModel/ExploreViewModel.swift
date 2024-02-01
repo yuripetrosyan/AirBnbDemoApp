@@ -35,5 +35,10 @@ class ExploreViewModel: ObservableObject{
             $0.city.lowercased() == location.lowercased() ||
             $0.state.lowercased() == location.lowercased()
         })
+        
+        //if not empty publish the filtered listings
+        self.listings = filteredListings.isEmpty ? listings : filteredListings
     }
 }
+
+

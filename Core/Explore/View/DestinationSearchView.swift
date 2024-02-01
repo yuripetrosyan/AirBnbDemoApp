@@ -9,6 +9,9 @@ enum DestinationSearchOption {
 
 struct DestinationSearchView: View {
     
+    @ObservedObject var viewModel: ExploreViewModel
+
+    
     @Binding var show: Bool
     @State private var destination = ""
     @State private var selectedOption: DestinationSearchOption = .location
@@ -16,6 +19,9 @@ struct DestinationSearchView: View {
     @State private var endDate = Date()
     @State private var guestNumber: Int = 0
 
+    
+    
+    
     
     var body: some View {
         
@@ -59,6 +65,11 @@ struct DestinationSearchView: View {
                         
                         TextField("Search destinations", text: $destination)
                             .font(.subheadline)
+                            .onSubmit {
+                                
+                                viewModel.updateListingsForLocation(destination)
+                                show.toggle()
+                            }
                         
                     }
                     .frame(height: 44)
@@ -169,7 +180,7 @@ struct DestinationSearchView: View {
 }
 
 #Preview {
-    DestinationSearchView(show: .constant(false))
+    DestinationSearchView(viewModel: ExploreViewModel(service: ExploreService()), show: .constant(false))
 }
 
 //MARK: - CollapsibleDestinationViewModifier
